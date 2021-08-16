@@ -1,0 +1,88 @@
+// В этом файле должны быть стили для БЭМ-блока page-header, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.page-header {
+  $block-name: &; // #{$block-name}__element
+
+  min-height: 710px;
+  margin-bottom: 75px;
+  padding-top: 100px;
+  background-color: #333333;
+  background-image: url('../img/bg-header.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__content {
+    line-height: 1.4;
+    margin-left: auto;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-top: -1rem;
+  }
+
+  &__text {
+    font-size: 1.25rem;
+  }
+
+  &__info--light {
+    margin-left: 5px;
+    background-color: #fe551e;
+  }
+
+  &__form-info {
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+  }
+
+  &__input {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-header__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-header {
+    margin-bottom: 155px;
+    padding-top: 185px;
+
+    &__content {
+      order: 2;
+      max-width: 670px;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__text {
+      font-size: 1.65rem;
+    }
+
+    &__form {
+      max-width: 350px;
+    }
+  }
+}
+
+.page-header__input::-webkit-input-placeholder {
+  font-weight: 300;
+}
+
+.page-header__input::-moz-placeholder {
+  font-weight: 300;
+}
+
+.page-header__input:-moz-placeholder {
+  font-weight: 300;
+}
+
+.page-header__input:-ms-input-placeholder {
+  font-weight: 300;
+}

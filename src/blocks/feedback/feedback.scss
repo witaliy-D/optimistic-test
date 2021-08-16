@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока fidback, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.feedback {
+  min-height: 555px;
+  padding-top: 100px;
+  color: #ffffff;
+  background-color: #424242;
+  background-image: url('../img/bg-footer.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .feedback__info {
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+
+  &__input {
+    padding-bottom: 0.75rem;
+    color: #ffffff;
+    background-color: transparent;
+    border-color: #ffffff;
+    border-radius: 0;
+  }
+  $block-name: &; // #{$block-name}__element
+}
+
+@media (min-width: 992px) {
+  .feedback {
+    padding-top: 150px;
+  }
+}
+
+.feedback__input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.feedback__input::-moz-placeholder {
+  color: #ffffff;
+}
+
+.feedback__input:-moz-placeholder {
+  color: #ffffff;
+}
+
+.feedback__input:-ms-input-placeholder {
+  color: #ffffff;
+}

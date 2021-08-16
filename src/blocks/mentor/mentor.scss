@@ -1,0 +1,50 @@
+// В этом файле должны быть стили для БЭМ-блока mentor, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.mentor {
+  $block-name: &; // #{$block-name}__element
+
+  margin-bottom: 80px;
+
+  &__inner {
+    gap: 2rem;
+  }
+
+  &__content {
+    height: 100%;
+  }
+
+  &__title {
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+
+    &.page__content-title:before {
+      right: auto;
+      left: 0;
+      height: 1px;
+      transform: translateX(0);
+    }
+  }
+
+  &__list-item {
+    padding: 0.25rem 1rem 0.25rem 1.5rem;
+    border: 0;
+
+    &:before {
+      @include sprite($list);
+
+      position: absolute;
+      content: '';
+      top: 0.5rem;
+      left: 0;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 1199.9px) {
+  .mentor__item {
+    flex-basis: 50%;
+  }
+}

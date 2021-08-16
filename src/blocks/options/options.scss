@@ -1,0 +1,79 @@
+// В этом файле должны быть стили для БЭМ-блока options, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.options {
+  $block-name: &; // #{$block-name}__element
+
+  margin-bottom: 80px;
+
+  @media (min-width: 992px) {
+    margin-bottom: 155px;
+  }
+
+  &__item-wrapper {
+    @media (min-width: 768px) {
+      height: auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 6.5rem 2rem 2rem;
+    background-color: #f7f7f7;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 2.2rem;
+      right: 50%;
+      width: 40px;
+      height: 40px;
+      transform: translateX(50%);
+    }
+
+    &--safety:before {
+      @include sprite($safety);
+    }
+
+    &--partner:before {
+      @include sprite($partner);
+    }
+
+    &--trust:before {
+      @include sprite($trust);
+    }
+
+    &--percent:before {
+      @include sprite($percent);
+    }
+
+    &--feedback:before {
+      @include sprite($feedback);
+    }
+
+    &--mobile:before {
+      @include sprite($mobile);
+    }
+  }
+
+  &__info {
+    line-height: 1.4;
+    letter-spacing: -0.6px;
+  }
+
+  &__pagination {
+    bottom: 0;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767.9px) {
+  .options__items {
+    flex-wrap: nowrap;
+    margin: 0;
+  }
+}

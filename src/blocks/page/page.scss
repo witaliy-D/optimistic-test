@@ -1,0 +1,85 @@
+// stylelint-disable plugin/selector-bem-pattern
+
+// Сделаем viewport великим снова! (привет, IE10) http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+@at-root {
+  // stylelint-disable-next-line
+  @-ms-viewport {
+    width: device-width; // stylelint-disable-line
+  }
+}
+
+.page {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%; // stylelint-disable-line
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 13px;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+    padding: 25px 0;
+    color: $gray-500;
+    background-color: #111111;
+
+    @media (min-width: 992px) {
+      padding: 53px 0;
+    }
+  }
+
+  &__content-title {
+    position: relative;
+    padding-bottom: 2.3rem;
+    color: #555555;
+
+    &:before {
+      position: absolute;
+      content: '';
+      right: 50%;
+      bottom: 0;
+      width: 70px;
+      height: 2px;
+      background-color: #117ff8;
+      transform: translateX(50%);
+    }
+  }
+}
+
+body {
+  text-align: left;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-main {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.6rem 1.5rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #fe551e;
+  border-color: #fe551e;
+}

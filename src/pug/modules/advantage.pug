@@ -1,0 +1,34 @@
+-
+  var advantageItems = [
+    {
+      "id": "user",
+      "title": "Персональный ментор",
+      "info": "Первые 3 месяца каждый партнер работает с персональным ментором и обучается стратегии"
+    },
+    {
+      "id": "time",
+      "title": "Пассивный метод",
+      "info": "Стратегия не потребует много времени, достаточно выделять 30 минут в день"
+    },
+    {
+      "id": "desktop",
+      "title": "Простота и доступность",
+      "info": "Весь рабочий процесс прост и доступен. Все необходимые знания получишь во время обучения"
+    },
+    {
+      "id": "purse",
+      "title": "Быстрый результат",
+      "info": "Первая прибыль уже через месяц после запуска стратегии"
+    }
+  ]
+
+section.advantage.text-center
+  .container
+    h3.page__content-title.text-uppercase.mb-5 Приемущества стратегии
+    .advantage__inner.swiper-container
+      .advantage__items.row.swiper-wrapper
+        each item in advantageItems
+          .advantage__item.col-xl-3.col-md-6.swiper-slide(class=`advantage__item--${item.id}`)
+            h5.advantage__title.text-uppercase= item.title
+            p.advantage__info.text-muted= item.info
+      .advantage__pagination.swiper-pagination

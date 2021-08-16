@@ -1,0 +1,19 @@
+header.page-header
+  .container
+    .row
+      section.page-header__content.col-xl-8.col-lg-7.text-white.mb-5
+        h1.page-header__title.text-uppercase.fw-light.mb-4 Эффективная стратегия для пассивного дохода
+        p.page-header__text.fw-light.mb-5
+          mark.page-header__info.text-white.p-0  Проверенный и рабочий способ пассивного дохода в интернете.
+        p.page-header__text.fw-light.mb-2
+          | Информация в открытом доступе
+          mark.page-header__info.page-header__info--light.text-white.p-0  временно
+          | , не упусти свой шанс.
+        +countdown()(class='text-center text-uppercase d-flex justify-content-center lh-sm' id='countdown')
+      .col-xl-4.col-lg-5
+        form.page-header__form.text-center.text-muted.bg-white.mb-5.p-4.needs-validation(method='post' action='#' novalidate)
+          h4.page-header__form-title.text-uppercase Начните зарабатывать
+          p.page-header__form-info Чтобы начать и получить подробную информацию заполните форму
+          input.page-header__input.form-control.mb-3(type='text' placeholder='Ваше имя' required)
+          input.page-header__input.form-control.mb-3(type='tel' placeholder='Телефон', required)
+          button.btn-main.btn.btn-danger.mt-4 начать

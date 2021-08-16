@@ -1,0 +1,27 @@
+include ../pug/helpers/mixins
+include ../pug/helpers/blocks-mixins
+
+block variables
+  -
+    var currentYear = new Date().getFullYear();
+
+doctype html
+html.page(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Test
+    link(href='css/style.css' rel='stylesheet')
+  body.page__inner
+    include ../pug/modules/page-header
+    main.page__content
+      include ../pug/modules/advantage
+      include ../pug/modules/mentor
+      include ../pug/modules/options
+      include ../pug/modules/reviews
+      include ../pug/modules/feedback
+    footer.page__footer
+      .container
+        span &copy; #{currentYear} All Rights Reserved
+    script(src='js/app.js')

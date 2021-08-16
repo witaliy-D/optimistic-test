@@ -1,0 +1,26 @@
+// В этом файле должны быть стили для БЭМ-блока countdown, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.countdown {
+  $block-name: &; // #{$block-name}__element
+
+  &__number {
+    position: relative;
+    width: 100px;
+
+    &:before {
+      position: absolute;
+      content: ':';
+      right: -4px;
+      font-size: 2.5rem;
+    }
+
+    &:last-child:before {
+      display: none;
+    }
+  }
+
+  &__text {
+    font-size: $sub-sup-font-size;
+  }
+}

@@ -1,0 +1,71 @@
+// В этом файле должны быть стили для БЭМ-блока advantage, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.advantage {
+  $block-name: &; // #{$block-name}__element
+
+  margin-bottom: 40px;
+
+  @media (min-width: 992px) {
+    margin-bottom: 90px;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-top: 4rem;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 50%;
+      width: 54px;
+      height: 54px;
+      transform: translateX(50%);
+    }
+
+    &--user:before {
+      @include sprite($user);
+    }
+
+    &--time:before {
+      @include sprite($time);
+    }
+
+    &--desktop:before {
+      @include sprite($desktop);
+    }
+
+    &--purse:before {
+      @include sprite($purse);
+    }
+  }
+
+  &__title {
+    font-size: 1.15rem;
+    letter-spacing: -0.3px;
+  }
+
+  &__info {
+    max-width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+    letter-spacing: -0.3px;
+  }
+
+  &__pagination {
+    bottom: 0;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767.9px) {
+  .advantage__items {
+    flex-wrap: nowrap;
+    margin: 0;
+  }
+}

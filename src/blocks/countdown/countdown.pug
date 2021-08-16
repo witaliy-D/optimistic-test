@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (countdown)
+mixin countdown(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +review('some-mod')
+
+  -
+    var countdownItems = ['days', 'hours', 'minutes', 'seconds']
+
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' countdown--' + modsList[i].trim();
+      }
+    }
+
+  .countdown(class=allMods)&attributes(attributes)
+    each item in countdownItems
+      +countdown-number(item)
+
+mixin countdown-number(item)
+
+  .countdown__number
+    span(class=`countdown__${item} countdown__time d-inline-block fs-1 fw-light`)
+    span(class= 'countdown__text d-block')= item
+    block

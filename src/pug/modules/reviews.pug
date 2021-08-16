@@ -1,0 +1,40 @@
+-
+  var reviewsItems = [
+    {
+      "info": "Всего за пару месяцев моя жизнь переменилась полностью, я понял, что для хорошего заработка " +
+              " необязательно много работать, нужно просто правильно работать. Главное вовремя начать и не бояться!",
+      "autor": "Даня Соловьев",
+      "datetime": "2021-05-24T15:18:20",
+      "time": "3 месяца с нами"
+    },
+    {
+      "info": "Я очень долго искала способ быстрого и стабильного заработка в интернете, ведь сегодня ситуация в " +
+              " стране не позволяет найти хорошую работу, с которой хватало бы на жизнь. Сейчас материальных проблем " +
+              " гораздо меньше.",
+      "autor": "Анна Банина",
+      "datetime": "2019-06-24T15:18:20",
+      "time": "26 месяцев с нами"
+    },
+    {
+      "info": "Из за постоянных кредитов стал вопрос о дополнительном заработке. К счастью мне предоставили " +
+              " возможность заработать. Научили, объяснили и теперь у меня есть хороший пассивный доход. Спасибо.",
+      "autor": "Игорь Ткачев",
+      "datetime": "2020-02-24T15:18:20",
+      "time": "18 месяцев с нами"
+    }
+  ]
+
+section.reviews.text-center
+  .container
+    h3.page__content-title.text-uppercase.mb-5 Отзывы успешных партнеров
+    .reviews__inner.swiper-container
+      .reviews__items.row.text-start.mb-3.swiper-wrapper
+        each item in reviewsItems
+          .col-lg-4.swiper-slide
+            .reviews__item
+              p.reviews__info.fs-5.fw-light.mb-4
+                em= item.info
+              b.reviews__autor.fs-5= item.autor
+              time.reviews__time.d-block.fw-light(datetime=`${item.datetime}`)= item.time
+      .reviews__pagination.swiper-pagination
+    button.btn-main.btn.btn-danger.rounded-0(type='button') Стать командой
